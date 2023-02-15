@@ -1,0 +1,14 @@
+Name: Backend
+Host: 0.0.0.0
+Port: 8888
+
+Mysql:
+  DataSource: root:123456@tcp(192.168.1.13:3306)/bk?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+Auth:
+  AccessSecret: uOvKLmVfztaXGpNYd4Z0I1SiT7MweJhl
+  AccessExpire: 86400
+
+Redis:
+  Host: 192.168.1.13:6379
+  Type: node

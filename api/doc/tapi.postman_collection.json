@@ -1,0 +1,600 @@
+{
+	"info": {
+		"_postman_id": "1690feb8-8ef9-43bc-a404-f136e2b2ce90",
+		"name": "tapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "登录",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "192.168.1.13:8888/api/login?name=tim&password=123456",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "tim"
+						},
+						{
+							"key": "password",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "路由列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzYzNjUxMzksImlhdCI6MTY3NjI3ODczOSwidWlkIjoxfQ.FtYau3m7MmFLR4c5rT5lc2tXVrYM7Xwxz9dBR_iAgQY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.1.13:8888/api/router/list",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"router",
+						"list"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "timzzx333",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "角色列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzYzNjUxMzksImlhdCI6MTY3NjI3ODczOSwidWlkIjoxfQ.FtYau3m7MmFLR4c5rT5lc2tXVrYM7Xwxz9dBR_iAgQY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.1.13:8888/api/role/list",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"role",
+						"list"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "timzzx333",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "角色新增编辑",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzYzNjUxMzksImlhdCI6MTY3NjI3ODczOSwidWlkIjoxfQ.FtYau3m7MmFLR4c5rT5lc2tXVrYM7Xwxz9dBR_iAgQY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.1.13:8888/api/role/edit?name=user&type=1&id=0",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"role",
+						"edit"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "user"
+						},
+						{
+							"key": "type",
+							"value": "1"
+						},
+						{
+							"key": "id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "角色删除",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzYzNjUxMzksImlhdCI6MTY3NjI3ODczOSwidWlkIjoxfQ.FtYau3m7MmFLR4c5rT5lc2tXVrYM7Xwxz9dBR_iAgQY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.1.13:8888/api/role/delete?id=1",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"role",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "admin1",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "资源编辑",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzYzNjUxMzksImlhdCI6MTY3NjI3ODczOSwidWlkIjoxfQ.FtYau3m7MmFLR4c5rT5lc2tXVrYM7Xwxz9dBR_iAgQY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.1.13:8888/api/permission/resource/edit?name=用户信息&url=/api/user/info&id=0",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"permission",
+						"resource",
+						"edit"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "用户信息"
+						},
+						{
+							"key": "url",
+							"value": "/api/user/info"
+						},
+						{
+							"key": "id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "资源列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzYzNjUxMzksImlhdCI6MTY3NjI3ODczOSwidWlkIjoxfQ.FtYau3m7MmFLR4c5rT5lc2tXVrYM7Xwxz9dBR_iAgQY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.1.13:8888/api/permission/resource/list",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"permission",
+						"resource",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "资源删除",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzYzNjUxMzksImlhdCI6MTY3NjI3ODczOSwidWlkIjoxfQ.FtYau3m7MmFLR4c5rT5lc2tXVrYM7Xwxz9dBR_iAgQY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.1.13:8888/api/permission/resource/delete?id=1",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"permission",
+						"resource",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "角色资源列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzYzNjUxMzksImlhdCI6MTY3NjI3ODczOSwidWlkIjoxfQ.FtYau3m7MmFLR4c5rT5lc2tXVrYM7Xwxz9dBR_iAgQY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.1.13:8888/api/role/permission/resource/list?role_id=2",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"role",
+						"permission",
+						"resource",
+						"list"
+					],
+					"query": [
+						{
+							"key": "role_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "角色资源分配",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzYzNjUxMzksImlhdCI6MTY3NjI3ODczOSwidWlkIjoxfQ.FtYau3m7MmFLR4c5rT5lc2tXVrYM7Xwxz9dBR_iAgQY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.1.13:8888/api/role/permission/resource/edit?role_id=2&data=2",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"role",
+						"permission",
+						"resource",
+						"edit"
+					],
+					"query": [
+						{
+							"key": "role_id",
+							"value": "2"
+						},
+						{
+							"key": "data",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户设置角色",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzYzNjUxMzksImlhdCI6MTY3NjI3ODczOSwidWlkIjoxfQ.FtYau3m7MmFLR4c5rT5lc2tXVrYM7Xwxz9dBR_iAgQY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "192.168.1.13:8888/api/user/set/role?user_id=3&role_id=2",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"user",
+						"set",
+						"role"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "3"
+						},
+						{
+							"key": "role_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY0NTA1MjIsImlhdCI6MTY3NjM2NDEyMiwidWlkIjozfQ.bHqIB-cp8sY-8Kcacsqr0i6K1YOylw0dr5xqIaPB1yM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.1.13:8888/api/user/info",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"user",
+						"info"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

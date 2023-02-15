@@ -1,0 +1,49 @@
+type (
+	// 创建用户
+	UserAddRequest {
+		Name     string `form:"name"`
+		Password string `form:"password"`
+	}
+	UserAddResponse {
+		Code int64  `json:"code"`
+		Msg  string `json:"msg"`
+	}
+
+    // 角色列表
+    RoleListRequest {
+
+    }
+    Role {
+        Id int64 `json:"id"`
+        Nmae string `json:"name"`
+        Type int64 `json:"type"`
+        Ctime int64 `json:"ctime"`
+        Utime int64 `json:"utime"`
+    }
+    RoleListResponse {
+        Code int64    `json:"code"`
+		Msg  string   `json:"msg"`
+		Data []Role `json:"data,optional"`
+    }
+
+    // 角色编辑
+    RoleEditRequest {
+        Id int64 `form:"id"`
+        Name     string `form:"name"`
+        Type int64 `form:"type"`
+    }
+    RoleEditResponse {
+        Code int64  `json:"code"`
+		Msg  string `json:"msg"`
+    }
+
+    // 角色删除
+    RoleDeleteRequest {
+        Id int64 `form:"id"`
+    }
+    RoleDeleteResponse {
+        Code int64  `json:"code"`
+		Msg  string `json:"msg"`
+    }
+
+)

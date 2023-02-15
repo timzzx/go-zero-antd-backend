@@ -1,0 +1,30 @@
+type(
+    PermissionResourceListRequest {
+    }
+    PermissionResource {
+        Name string `form:"name"`
+        Url string `form:"url"`
+        Ctime int64 `form:"ctime"`
+    }
+    PermissionResourceListResponse {
+        Code int64 `json:"code"`
+        Msg string `json:"msg"`
+        Data []PermissionResource `json:"data"`
+    }
+    PermissionResourceEditRequest {
+        Id int64 `form:"id"`
+        Name string `form:"name"`
+        Url string `form:"url"`
+    }
+    PermissionResourceEditResponse {
+        Code int64 `json:"code"`
+        Msg string `json:"msg"`
+    }
+    PermissionResourceDeleteRequest {
+        Id int64 `form:"id"`
+    }
+    PermissionResourceDeleteResponse {
+        Code int64 `json:"code"`
+        Msg string `json:"msg"`
+    }
+)

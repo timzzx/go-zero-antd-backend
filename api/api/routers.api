@@ -1,0 +1,15 @@
+type (
+    RouterListResquest {
+		
+    }
+    Router {
+        Method  string `json:"method"`
+		Path    string  `json:"path"`
+    }
+    RouterListResponse {
+        Code int64 `json:"code"`
+        Msg string  `json:"msg"`
+        Data []Router   `json:"data,optional"`
+    }
+
+)
