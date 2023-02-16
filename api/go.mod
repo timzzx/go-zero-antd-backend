@@ -5,6 +5,7 @@ go 1.19
 require (
 	github.com/golang-jwt/jwt/v4 v4.4.3
 	github.com/redis/go-redis/v9 v9.0.2
+	github.com/robfig/cron/v3 v3.0.1
 	github.com/spf13/cobra v1.6.1
 	github.com/zeromicro/go-zero v1.4.4
 	gorm.io/driver/mysql v1.4.3
