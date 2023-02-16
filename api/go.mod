@@ -5,6 +5,7 @@ go 1.19
 require (
 	github.com/golang-jwt/jwt/v4 v4.4.3
 	github.com/redis/go-redis/v9 v9.0.2
+	github.com/spf13/cobra v1.6.1
 	github.com/zeromicro/go-zero v1.4.4
 	gorm.io/driver/mysql v1.4.3
 	gorm.io/gen v0.3.21
@@ -26,6 +27,7 @@ require (
 	github.com/google/pprof v0.0.0-20211214055906-6f57359322fd // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.0 // indirect
+	github.com/inconshreveable/mousetrap v1.0.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/mattn/go-colorable v0.1.9 // indirect
@@ -38,6 +40,7 @@ require (
 	github.com/prometheus/common v0.37.0 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
+	github.com/spf13/pflag v1.0.5 // indirect
 	go.opentelemetry.io/otel v1.10.0 // indirect
 	go.opentelemetry.io/otel/exporters/jaeger v1.10.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/internal/retry v1.10.0 // indirect
