@@ -27,6 +27,9 @@ func main() {
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
 
+	// 日志 （能用不够优雅）
+	// logx.DisableStat()
+
 	server := rest.MustNewServer(c.RestConf)
 	defer server.Stop()
 
