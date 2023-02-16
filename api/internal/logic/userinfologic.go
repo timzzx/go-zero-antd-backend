@@ -4,9 +4,11 @@ import (
 	"context"
 	"encoding/json"
 
+	"tapi/aqueue/jobtype"
 	"tapi/internal/svc"
 	"tapi/internal/types"
 
+	"github.com/hibiken/asynq"
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
@@ -35,6 +37,23 @@ func (l *UserInfoLogic) UserInfo(req *types.UserInfoRequest) (resp *types.UserIn
 			Code: 500,
 			Msg:  err.Error(),
 		}, nil
+	}
+
+	// 测试一下写入job
+	payload, err := json.Marshal(jobtype.PayloadUserList{Id: 2})
+	if err != nil {
+		return &types.UserInfoResponse{
+			Code: 500,
+			Msg:  err.Error(),
+		}, nil
+	} else {
+		_, err = l.svcCtx.AsynqClient.Enqueue(asynq.NewTask(jobtype.DesUserList, payload))
+		if err != nil {
+			return &types.UserInfoResponse{
+				Code: 500,
+				Msg:  err.Error(),
+			}, nil
+		}
 	}
 
 	return &types.UserInfoResponse{
