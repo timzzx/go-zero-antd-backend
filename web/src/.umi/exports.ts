@@ -13,7 +13,6 @@ export { terminal } from './core/terminal';
 export { TestBrowser } from './testBrowser';
 // plugins
 export { Access, useAccess, useAccessMarkedRoutes } from '/home/code/go-zero-antd-backend/web/src/.umi/plugin-access';
-export { addLocale, setLocale, getLocale, getIntl, useIntl, injectIntl, formatMessage, FormattedMessage, getAllLocales, FormattedDate, FormattedDateParts, FormattedDisplayName, FormattedHTMLMessage, FormattedList, FormattedNumber, FormattedNumberParts, FormattedPlural, FormattedRelativeTime, FormattedTime, FormattedTimeParts, IntlProvider, RawIntlProvider, SelectLang } from '/home/code/go-zero-antd-backend/web/src/.umi/plugin-locale';
 export { Provider, useModel } from '/home/code/go-zero-antd-backend/web/src/.umi/plugin-model';
 export { useRequest, UseRequestProvider, request, getRequestInstance } from '/home/code/go-zero-antd-backend/web/src/.umi/plugin-request';
 // plugins types.d.ts

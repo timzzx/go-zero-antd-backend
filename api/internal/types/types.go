@@ -17,6 +17,14 @@ type LoginResponse struct {
 	Token string `json:"token,optional"`
 }
 
+type LoginOutRequest struct {
+}
+
+type LoginOutResponse struct {
+	Code int64  `json:"code"`
+	Msg  string `json:"msg"`
+}
+
 type UserInfo struct {
 	Id    int64  `json:"id"`
 	Name  string `json:"name"`

@@ -60,4 +60,18 @@ export default [
     layout: false,
     component: './404',
   },
+
+  // 用户管理
+  {
+    path: '/user',
+    name: '用户管理',
+    icon: 'crown',
+    routes: [
+      {
+        path: '/user/userinfo',
+        name: '用户信息',
+        component: './User/UserInfo',
+      },
+    ],
+  },
 ];

@@ -1,14 +1,14 @@
 import { GithubOutlined } from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-components';
-import { useIntl } from '@umijs/max';
+// import { useIntl } from '@umijs/max';
 import React from 'react';
 
 const Footer: React.FC = () => {
-  const intl = useIntl();
-  const defaultMessage = intl.formatMessage({
-    id: 'app.copyright.produced',
-    defaultMessage: '蚂蚁集团体验技术部出品',
-  });
+  // const intl = useIntl();
+  // const defaultMessage = intl.formatMessage({
+  //   id: 'app.copyright.produced',
+  //   defaultMessage: '蚂蚁集团体验技术部出品',
+  // });
 
   const currentYear = new Date().getFullYear();
 
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       style={{
         background: 'none',
       }}
-      copyright={`${currentYear} ${defaultMessage}`}
+      copyright={`${currentYear}`}
       links={[
         {
           key: 'Ant Design Pro',

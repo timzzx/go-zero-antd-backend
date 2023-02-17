@@ -33,6 +33,15 @@ type (
 		Token string `json:"token,optional"`
 	}
 
+	// 退出请求
+	LoginOutRequest {
+	}
+	// 退出返回
+	LoginOutResponse {
+		Code int64  `json:"code"`
+		Msg  string `json:"msg"`
+	}
+
 	// 用户数据
 	UserInfo {
 		Id    int64  `json:"id"`
@@ -63,17 +72,27 @@ service Backend {
 	// 登录
 	@handler Login
 	post /api/login(LoginRequest) returns (LoginResponse)
+	
+	// 退出
+	@handler LoginOut
+	post /api/loginout(LoginOutRequest) returns (LoginOutResponse)
 }
 
 @server(
 	jwt: Auth // 开启auth验证
-	middleware: LoginMiddle
 )
-
+// 这部分只验证jwt
 service Backend {
 	// 用户信息
 	@handler UserInfo
 	post /api/user/info(UserInfoRequest) returns (UserInfoResponse)
+}
+
+@server(
+	middleware: LoginMiddle
+)
+// 后面需要权限验证
+service Backend {
 	
 	// 创建用户
 	@handler UserAdd

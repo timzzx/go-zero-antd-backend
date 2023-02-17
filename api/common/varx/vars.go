@@ -9,3 +9,5 @@ import (
 var RouterList []rest.Route
 
 var Ctx *query.Query
+
+const PasswordSalt = "tapiSalt"

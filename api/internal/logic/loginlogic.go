@@ -5,6 +5,8 @@ import (
 	"time"
 
 	"tapi/common/jwtx"
+	"tapi/common/md5x"
+	"tapi/common/varx"
 	"tapi/internal/svc"
 	"tapi/internal/types"
 
@@ -37,8 +39,11 @@ func (l *LoginLogic) Login(req *types.LoginRequest) (resp *types.LoginResponse, 
 		}, nil
 	}
 
+	// 密码加密验证
+	password := md5x.Md5(req.Password + varx.PasswordSalt)
+
 	// 判断密码是否正确
-	if user.Password != req.Password {
+	if user.Password != password {
 		return &types.LoginResponse{
 			Code: 500,
 			Msg:  "密码错误",

@@ -5,8 +5,7 @@ import * as Plugin_0 from '/home/code/go-zero-antd-backend/web/src/app.tsx';
 import * as Plugin_1 from '/home/code/go-zero-antd-backend/web/src/.umi/plugin-access/runtime.tsx';
 import * as Plugin_2 from '/home/code/go-zero-antd-backend/web/src/.umi/plugin-initialState/runtime.tsx';
 import * as Plugin_3 from '/home/code/go-zero-antd-backend/web/src/.umi/plugin-layout/runtime.tsx';
-import * as Plugin_4 from '/home/code/go-zero-antd-backend/web/src/.umi/plugin-locale/runtime.tsx';
-import * as Plugin_5 from '/home/code/go-zero-antd-backend/web/src/.umi/plugin-model/runtime.tsx';
+import * as Plugin_4 from '/home/code/go-zero-antd-backend/web/src/.umi/plugin-model/runtime.tsx';
 import { PluginManager } from 'umi';
 
 function __defaultExport (obj) {
@@ -35,17 +34,13 @@ export function getPlugins() {
     },
     {
       apply: Plugin_4,
-      path: process.env.NODE_ENV === 'production' ? void 0 : '/home/code/go-zero-antd-backend/web/src/.umi/plugin-locale/runtime.tsx',
-    },
-    {
-      apply: Plugin_5,
       path: process.env.NODE_ENV === 'production' ? void 0 : '/home/code/go-zero-antd-backend/web/src/.umi/plugin-model/runtime.tsx',
     },
   ];
 }
 
 export function getValidKeys() {
-  return ['patchRoutes','patchClientRoutes','modifyContextOpts','modifyClientRenderOpts','rootContainer','innerProvider','i18nProvider','accessProvider','dataflowProvider','outerProvider','render','onRouteChange','antd','getInitialState','layout','locale','qiankun','request',];
+  return ['patchRoutes','patchClientRoutes','modifyContextOpts','modifyClientRenderOpts','rootContainer','innerProvider','i18nProvider','accessProvider','dataflowProvider','outerProvider','render','onRouteChange','antd','getInitialState','layout','qiankun','request',];
 }
 
 let pluginManager = null;
