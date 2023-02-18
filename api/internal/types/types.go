@@ -32,6 +32,15 @@ type UserInfo struct {
 	Utime int64  `json:"utime"`
 }
 
+type EditPasswordRequest struct {
+	Password string `json:"password"`
+}
+
+type EditPasswordResponse struct {
+	Code int64  `json:"code"`
+	Msg  string `json:"msg"`
+}
+
 type UserInfoRequest struct {
 }
 

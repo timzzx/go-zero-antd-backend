@@ -39,6 +39,12 @@ export const errorConfig: RequestConfig = {
     },
     // 错误接收及处理
     errorHandler: (error: any, opts: any) => {
+
+      // 判断是否登录过期
+      if (error.response.status == 401) {
+        message.info("登录过期，请重新登录");
+      }
+
       if (opts?.skipErrorHandler) throw error;
       // 我们的 errorThrower 抛出的错误。
       if (error.name === 'BizError') {
@@ -84,10 +90,10 @@ export const errorConfig: RequestConfig = {
       // 拦截响应数据，进行个性化处理
       const { data } = response as unknown as ResponseStructure;
 
-      if (data.code != 200) {
-        console.log(response);
-        message.error('请求失败！');
-      }
+      // if (data.code != 200) {
+      //   console.log(response);
+      //   message.error(data.msg);
+      // }
       return response;
     },
   ],

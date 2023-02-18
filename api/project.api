@@ -50,6 +50,17 @@ type (
 		Utime int64  `json:"utime"`
 	}
 
+	// 修改密码请求
+	EditPasswordRequest {
+		Password string `json:"password"`
+	}
+
+	// 修改密码返回
+	EditPasswordResponse {
+		Code int64  `json:"code"`
+		Msg  string `json:"msg"`
+	}
+
 	UserInfoRequest {
 	}
 	UserInfoResponse {
@@ -86,6 +97,9 @@ service Backend {
 	// 用户信息
 	@handler UserInfo
 	post /api/user/info(UserInfoRequest) returns (UserInfoResponse)
+	// 修改用户密码
+	@handler EditPassword
+	post /api/user/password(EditPasswordRequest) returns(EditPasswordResponse)
 }
 
 @server(
@@ -97,6 +111,8 @@ service Backend {
 	// 创建用户
 	@handler UserAdd
 	post /api/user/add(UserAddRequest) returns (UserAddResponse)
+	
+	// 修改密码
 	
 	// 获取路由列表
 	@handler RouterList
