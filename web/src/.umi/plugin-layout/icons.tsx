@@ -3,5 +3,4 @@
 // DO NOT CHANGE IT MANUALLY!
 import SmileOutlined from '/home/code/go-zero-antd-backend/web/node_modules/@ant-design/icons/es/icons/SmileOutlined';
 import CrownOutlined from '/home/code/go-zero-antd-backend/web/node_modules/@ant-design/icons/es/icons/CrownOutlined';
-import TableOutlined from '/home/code/go-zero-antd-backend/web/node_modules/@ant-design/icons/es/icons/TableOutlined';
-export default { SmileOutlined, CrownOutlined, TableOutlined };
+export default { SmileOutlined, CrownOutlined };
