@@ -84,9 +84,10 @@ export default (props: any) => {
   "fixedHeader": false,
   "fixSiderbar": true,
   "colorWeak": false,
-  "title": "Ant Design Pro",
-  "pwa": true,
-  "logo": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
+  "waterMarkProps": {},
+  "title": "go-zero-antd",
+  "pwa": false,
+  "logo": "https://timx.cn/img/favicon.ico",
   "iconfontUrl": "",
   "token": {}
 };

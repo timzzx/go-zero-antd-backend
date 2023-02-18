@@ -51,7 +51,7 @@ const AvatarLogo = () => {
     };
   });
 
-  return <Avatar size="small" className={avatarClassName} src={currentUser?.avatar} alt="avatar" />;
+  return <Avatar size="small" className={avatarClassName} src={currentUser?.avatar || "https://p3-passport.byteimg.com/img/user-avatar/dc3882ad05af6f1af15502ec58cd61e0~180x180.awebp"} alt="avatar" />;
 };
 
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
