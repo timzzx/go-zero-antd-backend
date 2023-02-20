@@ -1,20 +1,14 @@
 ﻿import type { RequestOptions } from '@@/plugin-request/request';
-import type { RequestConfig } from '@umijs/max';
-import { message, notification } from 'antd';
+import { history, RequestConfig } from '@umijs/max';
+import { message } from 'antd';
 
 // 错误处理方案： 错误类型
-enum ErrorShowType {
-  SILENT = 0,
-  WARN_MESSAGE = 1,
-  ERROR_MESSAGE = 2,
-  NOTIFICATION = 3,
-  REDIRECT = 9,
-}
+
 // 与后端约定的响应数据格式
 interface ResponseStructure {
-  code ?: number;
-  msg ?: string;
-  data ?: any;
+  code?: number;
+  msg?: string;
+  data?: any;
 }
 
 
@@ -28,9 +22,9 @@ export const errorConfig: RequestConfig = {
   errorConfig: {
     // 错误抛出
     errorThrower: (res) => {
-      const { code, data, msg } =
+      const { code, msg } =
         res as unknown as ResponseStructure;
-      if (code != 200) {
+      if (code !== 200) {
         const error: any = new Error(msg);
         error.name = 'BizError';
         error.info = { code, msg };
@@ -41,7 +35,7 @@ export const errorConfig: RequestConfig = {
     errorHandler: (error: any, opts: any) => {
 
       // 判断是否登录过期
-      if (error.response.status == 401) {
+      if (error.response.status === 401) {
         message.info("登录过期，请重新登录");
       }
 
@@ -70,11 +64,11 @@ export const errorConfig: RequestConfig = {
   },
 
   // 请求拦截器
-  
+
   requestInterceptors: [
     (config: RequestOptions) => {
       // console.log(localStorage.getItem('token'));
-      let token = localStorage.getItem('token')|| "";
+      let token = localStorage.getItem('token') || "";
       if (config && config.headers) {
         config.headers["Authorization"] = token;
       }
@@ -87,13 +81,15 @@ export const errorConfig: RequestConfig = {
   // 响应拦截器
   responseInterceptors: [
     (response) => {
+      console.log(response);
       // 拦截响应数据，进行个性化处理
       const { data } = response as unknown as ResponseStructure;
 
-      // if (data.code != 200) {
-      //   console.log(response);
-      //   message.error(data.msg);
-      // }
+      if (data.code === 401) {
+        console.log(response);
+        message.error("没有权限");
+        history.push("/");
+      }
       return response;
     },
   ],

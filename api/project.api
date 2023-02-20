@@ -97,12 +97,14 @@ service Backend {
 	// 用户信息
 	@handler UserInfo
 	post /api/user/info(UserInfoRequest) returns (UserInfoResponse)
+	
 	// 修改用户密码
 	@handler EditPassword
 	post /api/user/password(EditPasswordRequest) returns(EditPasswordResponse)
 }
 
 @server(
+	jwt: Auth // 开启auth验证
 	middleware: LoginMiddle
 )
 // 后面需要权限验证
@@ -112,7 +114,13 @@ service Backend {
 	@handler UserAdd
 	post /api/user/add(UserAddRequest) returns (UserAddResponse)
 	
-	// 修改密码
+	// 删除用户
+	@handler UserDel
+	post /api/user/del(UserDelRequest) returns (UserDelResponse)
+	
+	// 查询用户列表
+	@handler UserList
+	post /api/user/list(UserListRequest) returns (UserListResponse)
 	
 	// 获取路由列表
 	@handler RouterList

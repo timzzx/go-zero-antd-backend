@@ -1,49 +1,73 @@
 type (
 	// 创建用户
 	UserAddRequest {
+		Id       int64  `form:"id"`
 		Name     string `form:"name"`
-		Password string `form:"password"`
+		Password string `form:"password,optional"`
+		RoleId   int64  `form:"role_id"`
 	}
 	UserAddResponse {
 		Code int64  `json:"code"`
 		Msg  string `json:"msg"`
 	}
+	User {
+		Id       int64  `json:"id"`
+		Name     string `json:"name"`
+		RoleId   int64  `json:"role_id"`
+		RoleName string `json:"role_name"`
+		Ctime    int64  `json:"ctime"`
+		Utime    int64  `json:"utime"`
+	}
+	UserListRequest {
+		Name string `json:"name,optional"`
+	}
+	UserListResponse {
+		Code int64  `json:"code"`
+		Msg  string `json:"msg"`
+		Data []User `json:"data"`
+	}
 
-    // 角色列表
-    RoleListRequest {
-
-    }
-    Role {
-        Id int64 `json:"id"`
-        Nmae string `json:"name"`
-        Type int64 `json:"type"`
-        Ctime int64 `json:"ctime"`
-        Utime int64 `json:"utime"`
-    }
-    RoleListResponse {
-        Code int64    `json:"code"`
-		Msg  string   `json:"msg"`
+	// 用户删除
+	UserDelRequest {
+		Id int64 `json:"id"`
+	}
+	UserDelResponse {
+		Code int64  `json:"code"`
+		Msg  string `json:"msg"`
+	}
+	// 角色列表
+	RoleListRequest {
+	}
+	Role {
+		Id    int64  `json:"id"`
+		Nmae  string `json:"name"`
+		Type  int64  `json:"type"`
+		Ctime int64  `json:"ctime"`
+		Utime int64  `json:"utime"`
+	}
+	RoleListResponse {
+		Code int64  `json:"code"`
+		Msg  string `json:"msg"`
 		Data []Role `json:"data,optional"`
-    }
+	}
 
-    // 角色编辑
-    RoleEditRequest {
-        Id int64 `form:"id"`
-        Name     string `form:"name"`
-        Type int64 `form:"type"`
-    }
-    RoleEditResponse {
-        Code int64  `json:"code"`
+	// 角色编辑
+	RoleEditRequest {
+		Id   int64  `form:"id"`
+		Name string `form:"name"`
+		Type int64  `form:"type"`
+	}
+	RoleEditResponse {
+		Code int64  `json:"code"`
 		Msg  string `json:"msg"`
-    }
+	}
 
-    // 角色删除
-    RoleDeleteRequest {
-        Id int64 `form:"id"`
-    }
-    RoleDeleteResponse {
-        Code int64  `json:"code"`
+	// 角色删除
+	RoleDeleteRequest {
+		Id int64 `form:"id"`
+	}
+	RoleDeleteResponse {
+		Code int64  `json:"code"`
 		Msg  string `json:"msg"`
-    }
-
+	}
 )

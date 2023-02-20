@@ -75,11 +75,41 @@ type RouterListResponse struct {
 }
 
 type UserAddRequest struct {
+	Id       int64  `form:"id"`
 	Name     string `form:"name"`
-	Password string `form:"password"`
+	Password string `form:"password,optional"`
+	RoleId   int64  `form:"role_id"`
 }
 
 type UserAddResponse struct {
+	Code int64  `json:"code"`
+	Msg  string `json:"msg"`
+}
+
+type User struct {
+	Id       int64  `json:"id"`
+	Name     string `json:"name"`
+	RoleId   int64  `json:"role_id"`
+	RoleName string `json:"role_name"`
+	Ctime    int64  `json:"ctime"`
+	Utime    int64  `json:"utime"`
+}
+
+type UserListRequest struct {
+	Name string `json:"name,optional"`
+}
+
+type UserListResponse struct {
+	Code int64  `json:"code"`
+	Msg  string `json:"msg"`
+	Data []User `json:"data"`
+}
+
+type UserDelRequest struct {
+	Id int64 `json:"id"`
+}
+
+type UserDelResponse struct {
 	Code int64  `json:"code"`
 	Msg  string `json:"msg"`
 }

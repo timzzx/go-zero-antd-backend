@@ -51,6 +51,16 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Handler: UserAddHandler(serverCtx),
 				},
 				{
+					Method:  http.MethodPost,
+					Path:    "/api/user/del",
+					Handler: UserDelHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/api/user/list",
+					Handler: UserListHandler(serverCtx),
+				},
+				{
 					Method:  http.MethodGet,
 					Path:    "/api/router/list",
 					Handler: RouterListHandler(serverCtx),
@@ -102,5 +112,6 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				},
 			}...,
 		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
 	)
 }

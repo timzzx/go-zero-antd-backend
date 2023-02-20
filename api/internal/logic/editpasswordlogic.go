@@ -29,7 +29,13 @@ func NewEditPasswordLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Edit
 }
 
 func (l *EditPasswordLogic) EditPassword(req *types.EditPasswordRequest) (resp *types.EditPasswordResponse, err error) {
-	uid, _ := l.ctx.Value("uid").(json.Number).Int64()
+	uid, err := l.ctx.Value("uid").(json.Number).Int64()
+	if err != nil {
+		return &types.EditPasswordResponse{
+			Code: 500,
+			Msg:  err.Error(),
+		}, nil
+	}
 	// user表
 	u := l.svcCtx.BkModel.User
 	// 密码加密

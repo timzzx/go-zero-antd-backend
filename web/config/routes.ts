@@ -72,6 +72,11 @@ export default [
         name: '用户信息',
         component: './User/UserInfo',
       },
+      {
+        path: '/user/list',
+        name: '用户列表',
+        component: './UserList',
+      },
     ],
   },
 ];

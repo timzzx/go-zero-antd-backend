@@ -1,4 +1,4 @@
-import { PageContainer, ProCard, ProColumns, ProForm, ProFormText, ProTable } from '@ant-design/pro-components';
+import { PageContainer, ProCard, ProForm, ProFormText } from '@ant-design/pro-components';
 import { message } from 'antd';
 import { editPassword } from '@/services/user/api';
 import React from 'react';
@@ -11,7 +11,7 @@ const UserInfo: React.FC = () => {
                 <ProForm
                     onFinish={async (values: any) => {
                         const data = await editPassword(values);
-                        if (data.code == 200) {
+                        if (data.code === 200) {
                             message.success("修改成功")
                             localStorage.setItem("token", '');
                             history.push('/user/login');

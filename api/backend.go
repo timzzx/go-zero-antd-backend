@@ -49,6 +49,7 @@ func main() {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			defer func() {
 				if result := recover(); result != nil {
+					fmt.Println("======" + r.URL.Path)
 					log.Println(fmt.Sprintf("%v\n%s", result, debug.Stack()))
 					httpx.OkJson(w, &types.CodeErrorResponse{
 						Code: 500,
