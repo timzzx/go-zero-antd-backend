@@ -208,9 +208,10 @@ type RolePermissionResource struct {
 }
 
 type RolePermissionResourceListResponse struct {
-	Code int64                    `json:"code"`
-	Msg  string                   `json:"msg"`
-	Data []RolePermissionResource `json:"data"`
+	Code        int64                    `json:"code"`
+	Msg         string                   `json:"msg"`
+	Data        []RolePermissionResource `json:"data"`
+	CheckedData []RolePermissionResource `json:"checkdata"`
 }
 
 type RolePermissionResourceEditRequest struct {

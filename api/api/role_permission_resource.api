@@ -1,24 +1,25 @@
 type (
-    RolePermissionResourceListRequest {
-        RoleId int64 `form:"role_id"`
-    }
-    RolePermissionResource {
-        Id int64 `json:"id"`
-        Name string `json:"name"`
-        URL string `json:"url"`
-        Ctime int64 `json:"ctime"`
-    }
-    RolePermissionResourceListResponse {
-        Code int64 `json:"code"`
-        Msg string `json:"msg"`
-        Data []RolePermissionResource `json:"data"`
-    }
-    RolePermissionResourceEditRequest {
-        RoleId int64 `form:"role_id"`
-        Data string `form:"data"`
-    }
-    RolePermissionResourceEditResponse {
-        Code int64 `json:"code"`
-        Msg string `json:"msg"`
-    }    
+	RolePermissionResourceListRequest {
+		RoleId int64 `form:"role_id"`
+	}
+	RolePermissionResource {
+		Id    int64  `json:"id"`
+		Name  string `json:"name"`
+		URL   string `json:"url"`
+		Ctime int64  `json:"ctime"`
+	}
+	RolePermissionResourceListResponse {
+		Code        int64                    `json:"code"`
+		Msg         string                   `json:"msg"`
+		Data        []RolePermissionResource `json:"data"`
+		CheckedData []RolePermissionResource `json:"checkdata"`
+	}
+	RolePermissionResourceEditRequest {
+		RoleId int64  `form:"role_id"`
+		Data   string `form:"data"`
+	}
+	RolePermissionResourceEditResponse {
+		Code int64  `json:"code"`
+		Msg  string `json:"msg"`
+	}
 )

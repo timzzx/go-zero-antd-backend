@@ -61,6 +61,48 @@ declare namespace TAPI {
         msg?: string;
         data?: Role[];
     }
+    // 角色编辑
+    type RoleEditRequest = {
+        id?: number;
+        name?: string;
+        type?: number;
+    }
+    type RoleEditResponse = {
+        code?: number;
+        msg?: string;
+    }
+    type RoleDelRequest = {
+        id?: number;
+    }
+    type RoleDelResponse = {
+        code?: number;
+        msg?: string;
+    }
+
+    // 角色的资源列表
+    type RolePermissionListParam = {
+        role_id?: number;
+    }
+    type RolePermission = {
+        id?: number;
+        name?: string;
+    }
+    type RolePermissionListResponse = {
+        code?: number;
+        msg?: string;
+        data?: RolePermission[];
+        checkdata?: RolePermission[];
+    }
+    // 分配角色资源
+    type rolePermissionEditParam = {
+        role_id?: number;
+        data?: string;
+    }
+    type rolePermissionEditResponse = {
+        code?: number;
+        msg?: string;
+    }
+
 
     // 路由列表
     type Router = {

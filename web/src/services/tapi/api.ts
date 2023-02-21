@@ -21,6 +21,37 @@ export async function roleList() {
     });
 }
 
+// 角色编辑
+export async function roleEdit(params: TAPI.RoleEditRequest) {
+    return request<TAPI.RoleEditResponse>("/api/role/edit", {
+        method: "POST",
+        params: params,
+    })
+}
+
+// 角色删除
+export async function roleDel(params: TAPI.RoleDelRequest) {
+    return request<TAPI.RoleDelResponse>("/api/role/delete", {
+        method: "POST",
+        params: params,
+    })
+}
+
+// 角色权限列表
+export async function rolePermissionList(params: TAPI.RolePermissionListParam) {
+    return request<TAPI.RolePermissionListResponse>("/api/role/permission/resource/list", {
+        method: "POST",
+        params: params,
+    })
+}
+
+export async function rolePermissionEdit(params: TAPI.rolePermissionEditParam) {
+    return request<TAPI.rolePermissionEditResponse>("/api/role/permission/resource/edit", {
+        method: "POST",
+        params: params,
+    })
+}
+
 // 用户编辑
 export async function userAdd(params: TAPI.UserAddParams) {
     return request<TAPI.UserAddResponse>("/api/user/add", {

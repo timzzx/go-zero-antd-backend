@@ -28,6 +28,12 @@ func NewRolePermissionResourceEditLogic(ctx context.Context, svcCtx *svc.Service
 }
 
 func (l *RolePermissionResourceEditLogic) RolePermissionResourceEdit(req *types.RolePermissionResourceEditRequest) (resp *types.RolePermissionResourceEditResponse, err error) {
+	if req.Data == "" {
+		return &types.RolePermissionResourceEditResponse{
+			Code: 200,
+			Msg:  "成功",
+		}, nil
+	}
 	r := l.svcCtx.BkModel.RolePermissionResource
 	// 先删除
 	_, err = r.WithContext(l.ctx).Where(r.RoleID.Eq(req.RoleId)).Delete()
@@ -44,13 +50,15 @@ func (l *RolePermissionResourceEditLogic) RolePermissionResourceEdit(req *types.
 
 	for _, item := range ids {
 		i, _ := strconv.Atoi(item)
-		p := &model.RolePermissionResource{
-			RoleID: req.RoleId,
-			Prid:   int64(i),
-			Ctime:  int32(time.Now().Unix()),
-			Utime:  int32(time.Now().Unix()),
+		if i != -1 {
+			p := &model.RolePermissionResource{
+				RoleID: req.RoleId,
+				Prid:   int64(i),
+				Ctime:  int32(time.Now().Unix()),
+				Utime:  int32(time.Now().Unix()),
+			}
+			data = append(data, p)
 		}
-		data = append(data, p)
 	}
 
 	// 分配权限

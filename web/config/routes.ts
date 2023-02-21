@@ -82,6 +82,11 @@ export default [
         name: '资源列表',
         component: './PermissonResourceList',
       },
+      {
+        path: '/user/role/list',
+        name: '角色列表',
+        component: './RoleList',
+      },
     ],
   },
 ];
