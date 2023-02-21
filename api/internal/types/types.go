@@ -74,6 +74,16 @@ type RouterListResponse struct {
 	Data []Router `json:"data,optional"`
 }
 
+type RouterAddRequest struct {
+	Path string `json:"path"`
+	Name string `json:"name"`
+}
+
+type RouterAddResponse struct {
+	Code int64  `json:"code"`
+	Msg  string `json:"msg"`
+}
+
 type UserAddRequest struct {
 	Id       int64  `form:"id"`
 	Name     string `form:"name"`

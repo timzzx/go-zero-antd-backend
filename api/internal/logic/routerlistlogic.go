@@ -8,6 +8,7 @@ import (
 	"tapi/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
+	"gorm.io/gorm"
 )
 
 type RouterListLogic struct {
@@ -34,6 +35,16 @@ func (l *RouterListLogic) RouterList(req *types.RouterListResquest) (resp *types
 		}, nil
 	}
 
+	// 查出表里所有的
+	p := l.svcCtx.BkModel.PermissionResource
+	plist, err := p.WithContext(l.ctx).Where(p.Status.Eq(1)).Find()
+	if err != nil && err != gorm.ErrRecordNotFound {
+		return &types.RouterListResponse{
+			Code: 500,
+			Msg:  err.Error(),
+		}, nil
+	}
+
 	var data []types.Router
 
 	for _, item := range list {
@@ -42,7 +53,15 @@ func (l *RouterListLogic) RouterList(req *types.RouterListResquest) (resp *types
 			Path:   item.Path,
 		}
 		if d.Path != "/api/login" {
-			data = append(data, d)
+			var flag bool
+			for _, pdata := range plist {
+				if d.Path == pdata.URL {
+					flag = true
+				}
+			}
+			if flag != true {
+				data = append(data, d)
+			}
 		}
 	}
 

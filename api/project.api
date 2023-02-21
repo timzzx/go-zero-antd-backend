@@ -126,6 +126,10 @@ service Backend {
 	@handler RouterList
 	get /api/router/list(RouterListResquest) returns (RouterListResponse)
 	
+	// 新增资源
+	@handler RouterAdd
+	post /api/router/add(RouterAddRequest) returns (RouterAddResponse)
+	
 	// 角色列表
 	@handler RoleList
 	get /api/role/list(RoleListRequest) returns (RoleListResponse)

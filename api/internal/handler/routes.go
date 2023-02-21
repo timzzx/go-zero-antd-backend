@@ -66,6 +66,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Handler: RouterListHandler(serverCtx),
 				},
 				{
+					Method:  http.MethodPost,
+					Path:    "/api/router/add",
+					Handler: RouterAddHandler(serverCtx),
+				},
+				{
 					Method:  http.MethodGet,
 					Path:    "/api/role/list",
 					Handler: RoleListHandler(serverCtx),

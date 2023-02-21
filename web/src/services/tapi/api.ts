@@ -36,3 +36,18 @@ export async function userDel(params: TAPI.UserDelParams) {
         data: params,
     });
 }
+
+// 路由列表
+export async function routerList() {
+    return request<TAPI.RouterListResponse>("/api/router/list", {
+        method: "GET",
+    })
+}
+
+// 新增权限
+export async function routerAdd(data: TAPI.RouterAddParam) {
+    return request<TAPI.RouterAddResponse>("/api/router/add", {
+        method: "POST",
+        data: data,
+    })
+}

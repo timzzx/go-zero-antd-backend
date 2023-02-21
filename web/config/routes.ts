@@ -77,6 +77,11 @@ export default [
         name: '用户列表',
         component: './UserList',
       },
+      {
+        path: '/user/permission/resource/list',
+        name: '资源列表',
+        component: './PermissonResourceList',
+      },
     ],
   },
 ];

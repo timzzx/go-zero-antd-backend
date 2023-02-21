@@ -62,4 +62,26 @@ declare namespace TAPI {
         data?: Role[];
     }
 
+    // 路由列表
+    type Router = {
+        method?: string;
+        path?: string;
+        name?: string;
+    }
+    type RouterListResponse = {
+        code?: number;
+        msg?: string;
+        data?: Router[];
+    }
+
+    // 权限资源新增
+    type RouterAddParam = {
+        name?: string;
+        path?: string;
+    }
+    type RouterAddResponse = {
+        code?: number;
+        msg?: string;
+    }
+
 }
